@@ -19,11 +19,4 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots package
-      - name: Copy to staging directory   
-        run: mkdir staging && cp target/*.jar staging
-      - name: Upload packaging   
-      - uses: actions/upload-artifact@v3
-        with:
-          name: Package
-          path: staging
         
